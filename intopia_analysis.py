@@ -4,8 +4,9 @@
 # In[ ]:
 
 
-def team_tracker(df,team_number):
-    return df[df['Team Number'] == team_number]
+import pandas as pd
+import os
+path = r'%s' % os.getcwd().replace('\\','/')
 
 def convert_header(df):
     headers = df.iloc[0]
@@ -32,7 +33,18 @@ def convert_ad_from_html_to_df(html_file):
     df_final = df_ad_cannabis.append(df_ad_oil)
     return df_final
 
-def pull_combine_ad_from_html(file_path):
+def convert_region(df):
+    if df['Area'] == 'Central Canada':
+        return 'cc'
+    elif df['Area'] == 'Eastern Canada':
+        return 'ec'
+    elif df['Area'] == 'Western Canada':
+        return 'wc'
+
+def team_tracker(df,team_number):
+    return df[df['Team Number'] == team_number]
+    
+def get_advertising_data(file_path):
     ec_name = path+'/library/'+file_path+'advertising_ec.html'
     wc_name = path+'/library/'+file_path+'advertising_wc.html'
     cc_name = path+'/library/'+file_path+'advertising_cc.html'
@@ -48,15 +60,7 @@ def pull_combine_ad_from_html(file_path):
     
     return df_final
 
-def convert_region(df):
-    if df['Area'] == 'Central Canada':
-        return 'cc'
-    elif df['Area'] == 'Eastern Canada':
-        return 'ec'
-    elif df['Area'] == 'Western Canada':
-        return 'wc'
-
-def get_price(file_path):
+def get_live_price_data(file_path):
     df = pd.read_html(path+'/library/'+file_path+'/consumer_price_live.html')[0]
     df = convert_header(df)
     df['region'] = df.apply(convert_region, axis=1)
