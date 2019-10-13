@@ -1,4 +1,4 @@
-# intopia
+# Intopia
 This is made for the intopia stimulation where we employ many different data analysis techniques to support our executive decision throughout the stimulation
 
 ## Authors
