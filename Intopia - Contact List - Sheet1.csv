@@ -1,10 +1,6 @@
 Team Number,Team Member,Main Contact,Email,Facebook
-17,"Berezovskaia, Katya",TRUE,,https://www.facebook.com/katyaberez
-17,"Lau, Jack",TRUE,tlau012@uottawa.ca,https://www.facebook.com/yuen.lau.927
-17,"Duncan, Mackenzie",TRUE,,https://www.facebook.com/mac.duncan.712
-17,"Evan, Naylor",TRUE,,https://www.facebook.com/evan.naylor.79
 1,"Jones, Timothy",,,
-2,"Messer, Lisa",,,
+2,"Messer, Lisa",TRUE,lmess008@uottawa.ca,https://www.facebook.com/478389a
 2,"Lauzon, Kaitlyn",,,
 2,"Bos, Katilin",,,
 2,"Koester, Mackenzie",,,
@@ -34,15 +30,15 @@ Team Number,Team Member,Main Contact,Email,Facebook
 7,"Benmessoud, Kawter",,,
 7,"lamqaddem, haitam",,,
 8,"Ross, Sally",,,
-8,"Todorovich, Emma",,,
+8,"Todorovich, Emma",TRUE,etodo007@uottawa.ca,https://www.facebook.com/emma.todorovich.3
 8,"Spiliotopoulos, Tom",,,
 8,"Bush, Jordan",,,
 8,"McLeod, Taylor",,,
 9,"Pageau, Thierry",,,
 9,"Aly, Sabrina",,,
-9,"Alarie, Maxime",,,
+9,"Alarie, Maxime",TRUE,malar044@uottawa.ca,https://www.facebook.com/maxime.alarie.90
 9,"Chartrand, Jean-Christophe",,,
-9,"Jenicek, Jared",,,
+9,"Jenicek, Jared",,jjeni030@uottawa.ca,https://www.facebook.com/jared.jenicek
 10,"Matthew , Kranabetter",,,
 10,"McCann, Aidan",,,
 10,"Quan, Evelyn",,,
@@ -63,19 +59,23 @@ Team Number,Team Member,Main Contact,Email,Facebook
 13,"Bajwa, Kudrat",,,
 13,"James, Turhan",,,
 13,"James, Mackenzie",,,
-14,"St-Aubin, Gabrielle",,,
-14,"Therrien, Alexandre",,,
-14,"belisle, laurie-delia",,,
-14,"McDonald, Justin",,,
-15,"Toll, Alexandre",,,
-15,"Reading, Zach",,,
+14,"St-Aubin, Gabrielle",TRUE,gstau045@uottawa.ca,https://www.facebook.com/gabrielle.staubin.1
+14,"Therrien, Alexandre",,ather028@uottawa.ca,
+14,"belisle, laurie-delia",,lbeli061@uottawa.ca,
+14,"McDonald, Justin",,jmcdo131@uottawa.ca,
+15,"Toll, Alexandre",TRUE,,
+15,"Reading, Zach",,zread041@uottawa.ca,https://www.facebook.com/zach.reading
 15,"Wynne, Meghan",,,
 15,"Thompson, Dylan",,,
 16,"Ramanath, Kumarakuladervan",TRUE,rkuma023@uottawa.ca,https://www.facebook.com/profile.php?id=1033622776
 16,"masry, yousef",,,
-16,"Weng, Kexin",,,
+16,"Weng, Kexin",TRUE,kweng059@uottawa.ca,
 16,"Hsieh, Terry",TRUE,thsie039@uottawa.ca,https://www.facebook.com/terry.hsieh2
 16,"Yao, Ningyu",,,
+17,"Berezovskaia, Katya",TRUE,,https://www.facebook.com/katyaberez
+17,"Lau, Jack",TRUE,tlau012@uottawa.ca,https://www.facebook.com/yuen.lau.927
+17,"Duncan, Mackenzie",TRUE,mdunc101@uottawa.ca,https://www.facebook.com/mac.duncan.712
+17,"Evan, Naylor",TRUE,enayl037@uottawa.ca,https://www.facebook.com/evan.naylor.79
 17,"Kaminski, Patrick",,,https://www.facebook.com/patrick.kaminski.29
 18,"Amessan, Cédric",,,
 18,"Larose-Clément, Justin",,,
@@ -124,12 +124,12 @@ Team Number,Team Member,Main Contact,Email,Facebook
 27,"Wilcox, Patrick",,,
 27,"Donnelly, Robin",,,
 27,"Burla, Jeremi",,,
-28,"Montambeault, Stephanie",,,
-28,"Lei, Bonnie",,,
+28,"Montambeault, Stephanie",,smont093@uottawa.ca,https://www.facebook.com/stephanie.montambeault
+28,"Lei, Bonnie",TRUE,blei075@uottawa.ca,https://facebook.com/bonnaaylaay
 28,"Ta, Phillips",,,
 28,"Lee, Philip",,,
-28,"Dao, Huong Julie",,,
-29,"Kohlsmith, Riley",,,
+28,"Dao, Julie",,,
+29,"Kohlsmith, Riley",TRUE,rkohl025@uottawa.ca,https://www.facebook.com/riley.kohlsmith.50
 29,"Brock, Poirier",,,
 29,"Graham, Corey",,,
 29,"Bolotenko, James",,,
@@ -143,28 +143,28 @@ Team Number,Team Member,Main Contact,Email,Facebook
 31,"Hajjar, Matile",,,
 31,"Lasi Melchers, Karsten",,,
 31,"Fang, Jan Fatt",,,
-32,"Giddens, Connor",,,
+32,"Giddens, Connor",TRUE,cgidd021@uottawa.ca,https://www.facebook.com/connor.giddens.11
 32,"Moroney, Holly",,,
 32,"Miller, Maddie",,,
 32,"Griffith, Heidi",,,
 32,"Campbell, Catriona",,,
-33,"Jacome, Brendan",,,
+33,"Jacome, Brendan",Yes,bjaco026@uottawa.ca,https://www.facebook.com/brendan.jacome
 33,"Li, Binxue",,,
 33,"Xu, siqi",,,
 33,"Zhang, Xiaoning",,,
 33,"Wang, Huanhuan",,,
-34,"Dunlop, Matthew",,,
-34,"Lecomte, Daniel",,,
-34,"Al-Desiya, Sami",,,
-34,"Lang, Yupeng",,,
+34,"Dunlop, Matthew",TRUE,mdunl036@uottawa.ca,https://www.facebook.com/matt.dunlop3
+34,"Lecomte, Daniel",TRUE,"yleco027@uottawa.ca, 613-700-8047",https://www.facebook.com/danidanlecomte
+34,"Al-Desiya, Sami",TRUE,salde076@uottawa.ca,https://www.facebook.com/sami.aldessia
+34,"Lang, Yupeng",TRUE,ylang092@uottawa.ca,https://www.facebook.com/yupeng.lang.5
 34,"Shi, Peixin",,,
-35,"Nam, Hoang",,,
+35,"Nam, Hoang",,nhoan066@uottawa.ca,https://www.facebook.com/nam.hoang.31392
 35,"Ismail, Becky",,,
 35,"Fortin, Samuel",,,
 35,"Huang, Emily",,,
 35,"Stewart, Mackenzie",,,
 36,"Groot, Steven",,,
-36,"Radia, Reema",,,
+36,"Radia, Reema",TRUE,rradi017@uottawa.ca,https://www.facebook.com/profile.php?id=1618724114
 36,"Leger, Brandon",,,
 36,"Descoeurs, Casey",,,
 37,"McDonald, Daniel",,,
@@ -174,13 +174,13 @@ Team Number,Team Member,Main Contact,Email,Facebook
 37,"Didier, Sophia",,,
 38,"Timmers, Gina",,,
 38,"Ventriglia, Luca",,,
-38,"Tazuar, Tasnim",,,
+38,"Tazuar, Tasnim",,ttazu093@uottawa.ca,
 38,"Tripiciano , Elisa",,,
 39,"Hijazi, Noha",,,
 39,"Omar, Jasmine",,,
 39,"Zhu, Jingge",,,
 39,"Blake, Canesha",,,
-39,"Yousefi, Hanieh",,,
+39,"Yousefi, Hanieh",TRUE,hyous022@uottawa.ca,https://www.facebook.com/hanieh.yousefi
 40,"Dereje, Elbethel",,,
 40,"McCurdy, Cale",,,
 40,"Gran-Ruaz, Marcus",,,
@@ -193,7 +193,7 @@ Team Number,Team Member,Main Contact,Email,Facebook
 41,"Mendes, Annesha",,,
 42,"Heap, Susie",,,
 42,"Edmonds, Ashley",TRUE,aedmo050@uottawa.ca,https://www.facebook.com/ashley.edmonds.10
-42,"Butera, Angelo",,,
+42,"Butera, Angelo",,abute034@uottawa.ca,https://www.facebook.com/angelo.butera.9
 42,"Barrie, Jeremy",TRUE,,
 42,"Tremblay, Sam",,,
 43,"Upton, Devon",,,
@@ -219,7 +219,7 @@ Team Number,Team Member,Main Contact,Email,Facebook
 47,"Jessica, Kwok-Choon",,,
 47,"Gupta, Khyati",,,
 47,"Harris, Leon",,,
-47,"Tounkara, Awa",,,
+47,"Tounkara, Awa",,atoun010@uottawa.ca,
 48,"Bott, Aaron",,,
 48,"Treacher, McAllaster",,,
 48,"Duval, Emily",,,
@@ -243,11 +243,11 @@ Team Number,Team Member,Main Contact,Email,Facebook
 52,"Ménard, Justine",,,
 52,"Kalmakhanov, Mukhtar",,,
 52,"Yoshio, Oishi",,,
-53,"Wu, Jingxia",,,
+53,"Wu, Jingxia",TRUE,jwu158@uottawa.ca,https://www.facebook.com/jingxwu
 53,"Maystruk, Anna",,,
 53,"Dang, Kenny",,,
 53,"Akunov, Aidin",,,
-53,"Le, Minh",,,
+53,"Le, Minh",,mle060@uottawa.ca,https://www.facebook.com/minh.le.522066
 54,"Liu, Huanxin",,,
 54,"Prak, Monica",,,
 54,"Penny, Matthew",,,
@@ -270,7 +270,7 @@ Team Number,Team Member,Main Contact,Email,Facebook
 57,"Zibaitis, Gabriel",,,
 58,"Dutrisac Pineau, Marine",,,
 58,"Gardadien, Al",,,
-58,"Gen, Sydney",,,
+58,"Gen, Sydney",TRUE,,https://www.facebook.com/its.sydneyg
 58,"Sivanesan, Sarah",,,
 58,"Khemraj, Kameron",,,
 59,"Charette, Camille",,,
