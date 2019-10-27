@@ -6,11 +6,14 @@
 
 import pandas as pd
 import os
+import glob
+
 path = r'%s' % os.getcwd().replace('\\','/')
 
 def convert_header(df):
     headers = df.iloc[0]
     new_df = pd.DataFrame(df.values[1:], columns=headers)
+    
     return new_df
 
 def convert_ad_from_html_to_df(html_file):
@@ -56,7 +59,21 @@ def convert_region(df):
         return 'ec'
     elif df['Area'] == 'Western Canada':
         return 'wc'
+    
+def convert_valueadded_from_html_to_df(html_file):
+    value_added = pd.read_html(html_file)
+    period = html_file[-12:-5]
+    df_value_added = value_added[0]
+    df_value_added = convert_header(df_value_added)
+    value_added = df_value_added['Value Added']
+    value_added = pd.DataFrame(value_added)
+    value_added = (value_added['Value Added'].replace( '[\$,)]','', regex=True )
+                   .replace( '[(]','-',   regex=True ).astype(float))
+    column_name = "value_"+period
+    df_value_added[column_name] = value_added
 
+    return df_value_added
+    
 def get_advertising_data(file_path):
     ec_name = path+'/library/'+file_path+'advertising_ec.html'
     wc_name = path+'/library/'+file_path+'advertising_wc.html'
@@ -77,6 +94,7 @@ def get_live_price_data(file_path):
     df = pd.read_html(path+'/library/'+file_path+'/consumer_price_live.html')[0]
     df = convert_header(df)
     df['region'] = df.apply(convert_region, axis=1)
+    
     return df
 
 def get_production_data(file_path):
@@ -103,10 +121,53 @@ def get_production_data(file_path):
     df_final['Unit Production'] = df_final['Unit Production'].astype(int)/1000
     df_final['Company'] = df_final['Company'].astype(int)
     df_final['Grade'] = df_final['Grade'].astype(int)
-    
-    
+   
     return df_final
 
+def get_value_added_data(file_dir):
+
+    file_path = path + "/library/" + file_dir + "*.html"
+    file_list = glob.glob(file_path)
+
+    new_list = []
+
+    for file in file_list:
+        actual_file = file.replace('\\','/')
+        new_list.append(actual_file)
+
+    for n in range(len(new_list)):
+        if n == 0:
+            df_final = convert_valueadded_from_html_to_df(new_list[n])
+            df_final = df_final[['Company', 'Strategy' ,'value_period2']]
+        else:
+            df_new = convert_valueadded_from_html_to_df(new_list[n])
+            period = new_list[n][-12:-5]
+            column_name = "value_"+period
+            df_new = df_new[['Company', column_name]]
+            df_final = pd.merge(df_final, df_new, how='outer' , on='Company')
+            
+    df_final['Company'] = df_final['Company'].astype(int)
+    df_final = df_final.sort_values(by='Company', ascending=True)
+    return df_final
+
+def analysis_value_added_data(df_value, starting, ending):
+    number_of_row = df_value.shape[1] - 3
+    for n in range(number_of_row):
+        num = ending - starting + 1
+        if n == 0:
+            column = "difference_" + str(starting)
+            starting_column = 'value_period' + str(starting)
+            df_value[column] = df_value[starting_column] - 0
+            
+        elif n > 0 and n < num:
+            column = "difference_" + str(starting + n)
+            starting_column = 'value_period' + str(starting+n-1)
+            second_column = 'value_period' + str(starting+n)
+            df_value[column] =  df_value[second_column] - df_value[starting_column]
+        else:
+            break
+    
+    return df_value
 
 def team_tracker(df_team, team_number):
     return df_team[df_team['Team Number'] == team_number]
@@ -119,6 +180,7 @@ def production_tracking(df_contact, df_production, item, grade):
     
     df_final = df_combine[['Company', 'Grade', 'Unit Production', 'type', 'region']]
     df_final = df_final.drop_duplicates()
+    
     return df_final
 
 
