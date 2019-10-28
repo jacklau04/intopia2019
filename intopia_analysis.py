@@ -151,9 +151,9 @@ def get_value_added_data(file_dir):
     return df_final
 
 def analysis_value_added_data(df_value, starting, ending):
-    number_of_row = df_value.shape[1] - 3
+    number_of_row = df_value.shape[1] - 2
     for n in range(number_of_row):
-        num = ending - starting + 1
+        num = ending - starting + 2
         if n == 0:
             column = "difference_" + str(starting)
             starting_column = 'value_period' + str(starting)
@@ -163,6 +163,7 @@ def analysis_value_added_data(df_value, starting, ending):
             column = "difference_" + str(starting + n)
             starting_column = 'value_period' + str(starting+n-1)
             second_column = 'value_period' + str(starting+n)
+            print(column + starting_column + second_column)
             df_value[column] =  df_value[second_column] - df_value[starting_column]
         else:
             break
