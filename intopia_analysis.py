@@ -52,6 +52,38 @@ def convert_production_from_html_to_df(html_file):
     
     return df_production
 
+def convert_sales_from_html_to_df(html_file):
+    sales = pd.read_html(html_file)
+    
+    df_sales = sales[1]
+    
+    name = html_file.split('_')
+    product = name[1]
+    region = name[2][:2]
+    
+    df_sales = convert_header(df_sales)
+    
+    df_sales['type'] = product
+    df_sales['region'] = region
+    
+    return df_sales
+
+def convert_inventory_from_html_to_df(html_file):
+    inventory = pd.read_html(html_file)
+    
+    df_inventory = inventory[1]
+    
+    name = html_file.split('_')
+    product = name[1]
+    region = name[2][:2]
+    
+    df_inventory = convert_header(df_inventory)
+    
+    df_inventory['type'] = product
+    df_inventory['region'] = region
+    
+    return df_inventory
+
 def convert_region(df):
     if df['Area'] == 'Central Canada':
         return 'cc'
@@ -114,11 +146,38 @@ def get_production_data(file_path):
     
     df_final = df_x_cc.append(df_x_ec)
     df_final = df_final.append(df_x_wc)
-    df_final = df_final.append(df_y_cc)
+    df_final = df_final.append(df_x_cc)
     df_final = df_final.append(df_y_ec)
     df_final = df_final.append(df_y_wc)
     
     df_final['Unit Production'] = df_final['Unit Production'].astype(int)/1000
+    df_final['Company'] = df_final['Company'].astype(int)
+    df_final['Grade'] = df_final['Grade'].astype(int)
+   
+    return df_final
+
+def get_sales_data(file_path):
+    x_cc_name = path+'/library/'+file_path+'sales_x_cc.html'
+    x_ec_name = path+'/library/'+file_path+'sales_x_ec.html'
+    x_wc_name = path+'/library/'+file_path+'sales_x_wc.html'
+    y_cc_name = path+'/library/'+file_path+'sales_y_cc.html'
+    y_ec_name = path+'/library/'+file_path+'sales_y_ec.html'
+    y_wc_name = path+'/library/'+file_path+'sales_y_wc.html'
+    
+    df_x_cc = convert_sales_from_html_to_df(x_cc_name)
+    df_x_ec = convert_sales_from_html_to_df(x_ec_name)
+    df_x_wc = convert_sales_from_html_to_df(x_wc_name)
+    df_y_cc = convert_sales_from_html_to_df(y_cc_name)
+    df_y_ec = convert_sales_from_html_to_df(y_ec_name)
+    df_y_wc = convert_sales_from_html_to_df(y_wc_name)
+    
+    df_final = df_x_cc.append(df_x_ec)
+    df_final = df_final.append(df_x_wc)
+    df_final = df_final.append(df_y_cc)
+    df_final = df_final.append(df_y_ec)
+    df_final = df_final.append(df_y_wc)
+    
+    df_final['Unit Sales'] = df_final['Unit Sales'].astype(int)/1000
     df_final['Company'] = df_final['Company'].astype(int)
     df_final['Grade'] = df_final['Grade'].astype(int)
    
@@ -148,6 +207,63 @@ def get_value_added_data(file_dir):
             
     df_final['Company'] = df_final['Company'].astype(int)
     df_final = df_final.sort_values(by='Company', ascending=True)
+    return df_final
+
+def get_inventory_data(file_path):
+    x_cc_name_high = path+'/library/'+file_path+'inventory_x_cc_high.html'
+    x_cc_name_low = path+'/library/'+file_path+'inventory_x_cc_low.html'
+
+    x_ec_name_high = path+'/library/'+file_path+'inventory_x_ec_high.html'
+    x_ec_name_low = path+'/library/'+file_path+'inventory_x_ec_low.html'
+    
+    x_wc_name_high = path+'/library/'+file_path+'inventory_x_wc_high.html'
+    x_wc_name_low = path+'/library/'+file_path+'inventory_x_wc_low.html'
+
+    y_cc_name_high = path+'/library/'+file_path+'inventory_y_cc_high.html'
+    y_cc_name_low = path+'/library/'+file_path+'inventory_y_cc_low.html'
+    
+    y_ec_name_high = path+'/library/'+file_path+'inventory_y_ec_high.html'
+    y_ec_name_low = path+'/library/'+file_path+'inventory_y_ec_low.html'
+    
+    y_wc_name_high = path+'/library/'+file_path+'inventory_y_wc_high.html'
+    y_wc_name_low = path+'/library/'+file_path+'inventory_y_wc_low.html'
+    
+    df_x_cc_high = convert_inventory_from_html_to_df(x_cc_name_high)
+    df_x_ec_high = convert_inventory_from_html_to_df(x_ec_name_high)
+    df_x_wc_high = convert_inventory_from_html_to_df(x_wc_name_high)
+    df_y_cc_high = convert_inventory_from_html_to_df(y_cc_name_high)
+    df_y_ec_high = convert_inventory_from_html_to_df(y_ec_name_high)
+    df_y_wc_high = convert_inventory_from_html_to_df(y_wc_name_high)
+    
+    df_x_cc_low = convert_inventory_from_html_to_df(x_cc_name_low)
+    df_x_ec_low = convert_inventory_from_html_to_df(x_ec_name_low)
+    df_x_wc_low = convert_inventory_from_html_to_df(x_wc_name_low)
+    df_y_cc_low = convert_inventory_from_html_to_df(y_cc_name_low)
+    df_y_ec_low = convert_inventory_from_html_to_df(y_ec_name_low)
+    df_y_wc_low = convert_inventory_from_html_to_df(y_wc_name_low)
+    
+    df_final = df_x_ec_low.append(df_x_ec_high)
+
+    df_final = df_final.append(df_x_wc_high)
+    df_final = df_final.append(df_x_wc_low)
+    
+    df_final = df_final.append(df_x_cc_high)
+    df_final = df_final.append(df_x_cc_low)
+
+    df_final = df_final.append(df_y_cc_high)
+    df_final = df_final.append(df_y_cc_low)
+
+    df_final = df_final.append(df_y_ec_high)
+    df_final = df_final.append(df_y_ec_low)
+
+    df_final = df_final.append(df_y_wc_high)
+    df_final = df_final.append(df_y_wc_low)
+
+    
+    df_final['Units'] = df_final['Units'].astype(int)/1000
+    df_final['Company'] = df_final['Company'].astype(int)
+    df_final['Grade'] = df_final['Grade'].astype(int)
+   
     return df_final
 
 def analysis_value_added_data(df_value, starting, ending):
