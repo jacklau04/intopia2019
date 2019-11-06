@@ -21,19 +21,19 @@ def convert_ad_from_html_to_df(html_file):
     name = html_file.split('_')
     region = name[1][:2]
     
-    ad_cannabis = ad[0]
-    ad_oil = ad[1]
+    df_cannabis = ad[0]
+    df_oil = ad[1]
     
-    df_ad_cannabis = convert_header(ad_cannabis)
-    df_ad_oil = convert_header(ad_oil)
+    #ad_cannabis = convert_header(ad_cannabis)
+    #df_oil = convert_header(ad_oil)
     
-    df_ad_cannabis['type'] = 'x'
-    df_ad_oil['type'] = 'y'
+    df_cannabis['type'] = 'x'
+    df_oil['type'] = 'y'
     
-    df_ad_cannabis['region'] = region
-    df_ad_oil['region'] = region
+    df_cannabis['region'] = region
+    df_oil['region'] = region
     
-    df_final = df_ad_cannabis.append(df_ad_oil)
+    df_final = df_cannabis.append(df_oil)
     return df_final
 
 def convert_production_from_html_to_df(html_file):
@@ -45,7 +45,7 @@ def convert_production_from_html_to_df(html_file):
     product = name[1]
     region = name[2][:2]
     
-    df_production = convert_header(df_production)
+    #df_production = convert_header(df_production)
     
     df_production['type'] = product
     df_production['region'] = region
@@ -61,7 +61,7 @@ def convert_sales_from_html_to_df(html_file):
     product = name[1]
     region = name[2][:2]
     
-    df_sales = convert_header(df_sales)
+    #df_sales = convert_header(df_sales)
     
     df_sales['type'] = product
     df_sales['region'] = region
@@ -77,7 +77,7 @@ def convert_inventory_from_html_to_df(html_file):
     product = name[1]
     region = name[2][:2]
     
-    df_inventory = convert_header(df_inventory)
+    #df_inventory = convert_header(df_inventory)
     
     df_inventory['type'] = product
     df_inventory['region'] = region
@@ -96,7 +96,7 @@ def convert_valueadded_from_html_to_df(html_file):
     value_added = pd.read_html(html_file)
     period = html_file[-12:-5]
     df_value_added = value_added[0]
-    df_value_added = convert_header(df_value_added)
+    #df_value_added = convert_header(df_value_added)
     value_added = df_value_added['Value Added']
     value_added = pd.DataFrame(value_added)
     value_added = (value_added['Value Added'].replace( '[\$,)]','', regex=True )
@@ -124,7 +124,7 @@ def get_advertising_data(file_path):
 
 def get_live_price_data(file_path):
     df = pd.read_html(path+'/library/'+file_path+'/consumer_price_live.html')[0]
-    df = convert_header(df)
+    #df = convert_header(df)
     df['region'] = df.apply(convert_region, axis=1)
     
     return df
