@@ -183,6 +183,25 @@ def get_sales_data(file_path):
    
     return df_final
 
+def get_sales_p2_data(file_path):
+    x_cc_name = path+'/library/'+file_path+'sales_x_cc.html'
+    x_ec_name = path+'/library/'+file_path+'sales_x_ec.html'
+    x_wc_name = path+'/library/'+file_path+'sales_x_wc.html'
+    
+    df_x_cc = convert_sales_from_html_to_df(x_cc_name)
+    df_x_ec = convert_sales_from_html_to_df(x_ec_name)
+    df_x_wc = convert_sales_from_html_to_df(x_wc_name)
+
+    df_final = df_x_cc.append(df_x_ec)
+    df_final = df_final.append(df_x_wc)
+
+    df_final['Unit Sales'] = df_final['Unit Sales'].astype(int)/1000
+    df_final['Company'] = df_final['Company'].astype(int)
+    df_final['Grade'] = df_final['Grade'].astype(int)
+   
+    return df_final
+
+
 def get_value_added_data(file_dir):
 
     file_path = path + "/library/" + file_dir + "*.html"

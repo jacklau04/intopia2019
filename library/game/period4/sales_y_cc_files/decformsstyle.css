@@ -1,0 +1,137 @@
+﻿body {    text-align: center;
+}
+
+.labeltitle {
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: x-large;
+    color:  #0000FF;
+   
+    text-align: center;
+    }
+
+.labelsmalltitle{
+   font-family: Verdana;
+    font-size: large;
+    color:  #0000FF;
+    
+    }
+}
+
+.labelerror{
+    Font-Size:medium;
+    color: Red;
+     font-weight: bold
+    }
+}
+
+.labelstatus{
+    Font-Size:medium;
+    color: green;
+    font-weight: bold;
+}
+}
+
+.labeltableheader{
+    color: white;
+  
+}
+table {
+    border: 2px solid blue;
+    border-collapse: collapse;
+    padding: 2px;
+    width: 84%;
+    margin-top: 0px;
+    color: #0000FF;
+}
+
+tr, td {
+    border: 2px solid blue;
+    border-collapse: collapse;
+    padding: 4px;
+    font-family: Verdana;
+    font-size: medium;    
+    color: blue; 
+    text-align: center;
+    
+    
+        }
+
+th{
+ border: 2px solid white;
+    border-collapse: collapse;
+    padding: 4px;
+    height: auto;
+    font-family: Verdana;
+    font-size: medium;    
+    color: white;
+    background-color: blue;
+    text-align: center;
+}
+
+thead, tfoot {
+    background-color: blue;
+    color: white;
+}
+
+
+
+.emptycells{
+    border: none;
+     empty-cells: hide;
+     background-color: none;
+
+}
+.aligntop{
+    vertical-align:top;
+
+}
+
+.captionstyle{
+    font-size: medium;
+    font-weight: bold;
+
+
+
+}
+.Grid {
+    background-color: #fff; margin: 5px 0 10px 0; 
+    border: solid 1px; 
+    border-color: blue;
+    border-collapse:collapse; 
+    font-family:        Verdana; color: #0000FF;
+    text-align: center;
+
+width: 60%;
+    font-size: small;}
+.Grid td {
+
+      padding: 2px;
+      text-align:center;
+      border: solid 1px #0000FF; 
+      
+}
+
+.Grid th  {
+
+      padding : 4px 2px;
+      text-align:center;
+      color: white;
+      border-color: blue; 
+     border-collapse: collapse;
+      border: solid 1px;
+
+      font-size: Medium; }
+
+.Grid rows {
+    
+
+}
+.Grid rows:hover {
+background-color: #ff8000;
+	font-family: verdana;
+	color: #fff;
+	
+
+}
+
